@@ -11,13 +11,11 @@ pub use db::*;
 mod db {
     use super::*;
 
-    #[derive(sqlx::FromRow)]
     pub struct Fortune {
         pub id:      i32,
         pub message: String,
     }
 
-    #[derive(sqlx::FromRow)]
     #[derive(serde::Serialize)]
     #[allow(non_snake_case)]
     pub struct World {

@@ -12,14 +12,13 @@ use {
     models::{Fortune, World, WorldsMeta},
     postgres::Postgres,
     templates::FortunesTemplate,
-    ohkami::format::Query,
 };
 
 pub async fn ohkami() -> Ohkami {
     Ohkami::new((
         SetServer,
         #[cfg(feature = "rt_tokio")]
-        Postgres::init().await,
+        Context::new(Postgres::new().await),
         
         "/plaintext".GET(plaintext),
         "/json".GET(json_serialization),

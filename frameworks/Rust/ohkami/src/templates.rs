@@ -17,6 +17,7 @@ pub struct FortunesTemplate {
 }
 
 impl IntoResponse for FortunesTemplate {
+    #[inline]
     fn into_response(self) -> Response {
         match Template::call(&self) {
             Ok(template) => Response::OK().with_html(template),
