@@ -1,5 +1,4 @@
-#[tokio::main]
-async fn main() {
+fn main() {
     tokio::runtime::Builder::new_multi_thread()
         .enable_all()
         .event_interval(11)
