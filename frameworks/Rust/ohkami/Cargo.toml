@@ -13,7 +13,7 @@ futures-util   = { optional = true, version = "0.3"  }
 rand           = { optional = true, version = "0.8", features = ["small_rng"] }
 
 [features]
-rt_tokio   = ["ohkami/rt_tokio", "tokio-postgres", "yarte", "futures-util", "rand"]
+rt_tokio   = ["ohkami/rt_tokio", "tokio", "tokio-postgres", "yarte", "futures-util", "rand"]
 rt_smol    = ["ohkami/rt_smol"]
 rt_glommio = ["ohkami/rt_glommio"]
 rt_nio     = ["ohkami/rt_nio"]
