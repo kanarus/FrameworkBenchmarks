@@ -5,9 +5,9 @@ pub struct Message {
     pub message: &'static str,
 }
 
-#[cfg(feature = "db")]
+#[cfg(feature = "rt_tokio")]
 pub use db::*;
-#[cfg(feature = "db")]
+#[cfg(feature = "rt_tokio")]
 mod db {
     use super::*;
 

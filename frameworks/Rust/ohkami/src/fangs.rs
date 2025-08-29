@@ -5,11 +5,11 @@ pub struct SetServer;
 impl FangAction for SetServer {
     #[inline(always)]
     async fn back<'a>(&'a self, res: &'a mut ohkami::Response) {
-        res.headers.set().Server("ohkami");
+        res.headers.set().server("ohkami");
     }
 }
 
-#[cfg(feature = "db")]
+#[cfg(feature = "rt_tokio")]
 impl crate::Postgres {
     pub async fn init() -> impl FangAction {
         #[derive(Clone)]

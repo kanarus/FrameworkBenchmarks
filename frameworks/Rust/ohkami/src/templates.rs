@@ -1,4 +1,4 @@
-#![cfg(feature = "db")]
+#![cfg(feature = "rt_tokio")]
 
 use ohkami::{IntoResponse, Response};
 use yarte::Template;
