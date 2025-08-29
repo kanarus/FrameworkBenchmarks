@@ -6,10 +6,11 @@ authors = ["kanarus <kanarus786@gmail.com>"]
 
 [dependencies]
 ohkami         = { version = "0.24" }
+tokio          = { optional = true, version = "1.47", features = ["rt"] }
+tokio-postgres = { optional = true, version = "0.7" }
 yarte          = { optional = true, version = "0.15" }
 futures-util   = { optional = true, version = "0.3"  }
 rand           = { optional = true, version = "0.8", features = ["small_rng"] }
-tokio-postgres = { optional = true, version = "0.7" }
 
 [features]
 rt_tokio   = ["ohkami/rt_tokio", "tokio-postgres", "yarte", "futures-util", "rand"]

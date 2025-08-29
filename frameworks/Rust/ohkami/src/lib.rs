@@ -33,6 +33,10 @@ pub async fn ohkami() -> Ohkami {
     ))
 }
 
+async fn plaintext() -> &'static str {
+    "Hello, World!"
+}
+
 async fn json_serialization() -> Json<Message> {
     Json(Message {
         message: "Hello, World!"
@@ -76,11 +80,6 @@ async fn database_updates(
     Context(db): Context<'_, Postgres>,
 ) -> Json<Vec<World>> {
     let n = q.parse();
-    let mut worlds = db.select_n_random_worlds(n).await;
-    db.update_random_ids_of_worlds(&mut worlds).await;
+    let worlds = db.update_randomnumbers_of_n_worlds(n).await;
     Json(worlds)
-}
-
-async fn plaintext() -> &'static str {
-    "Hello, World!"
 }

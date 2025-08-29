@@ -617,6 +617,7 @@ dependencies = [
  "futures-util",
  "ohkami",
  "rand 0.8.5",
+ "tokio",
  "tokio-postgres",
  "yarte",
 ]
